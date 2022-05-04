@@ -57,37 +57,19 @@ extension SQLite.Connection {
                    raw_values: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>?,
                    raw_names:  UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>?
                 ) -> Int32 in
-                    let values = UnsafeMutableBufferPointer<UnsafeMutablePointer<Int8>?>(
-                        start: raw_values,
-                        count: Int(count))
-                    let names = UnsafeMutableBufferPointer<UnsafeMutablePointer<Int8>?>(
-                        start: raw_names,
-                        count: Int(count))
-                    
                     var row = [String: String]()
-                    
                     for i in 0 ..< Int(count) {
-                        let raw_value = values[i].unsafelyUnwrapped
-                        let value = String(
-                            bytesNoCopy: raw_value,
-                            length: strlen(raw_value),
-                            encoding: .utf8,
-                            freeWhenDone: false).unsafelyUnwrapped
-                        
-                        let raw_name = names[i].unsafelyUnwrapped
-                        let name = String(
-                            bytesNoCopy: raw_name,
-                            length: strlen(raw_name),
-                            encoding: .utf8,
-                            freeWhenDone: false).unsafelyUnwrapped
-                        
-                        row[name] = value
+                        if let raw_value = raw_values?[i],
+                           let raw_name = raw_names?[i] {
+                            let value = String(cString: raw_value)
+                            let name = String(cString: raw_name)
+                            row[name] = value
+                        }
                     }
-                    
-                    let context_ptr = context.unsafelyUnwrapped.assumingMemoryBound(
-                        to: (([String: String]) -> Void).self)
-                    context_ptr.pointee(row)
-                    
+                    if let context_ptr = context?.assumingMemoryBound(
+                        to: (([String: String]) -> Void).self) {
+                        context_ptr.pointee(row)
+                    }
                     return SQLITE_OK
                 },
                 context_ptr,
@@ -95,10 +77,7 @@ extension SQLite.Connection {
             let model = SQLAnyExecuteModel(
                 status: result == SQLITE_OK
                 ? .ok
-                : .error(String(bytesNoCopy: errmsg.unsafelyUnwrapped,
-                                length: strlen(errmsg.unsafelyUnwrapped),
-                                encoding: .utf8,
-                                freeWhenDone: true).unsafelyUnwrapped),
+                : .error(errmsg.map { String(cString: $0) } ?? ""),
                 output: logBuffer)
             handler(model)
         }

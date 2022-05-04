@@ -27,7 +27,7 @@ public final class Database: ObservableObject {
         query: String,
         handler: @escaping (String) -> Void
     ) {
-        db.anyExecute(query, handler: handler)
+        db.anyExecute(query, handler: { handler($0.asView()) })
     }
     
     public func insertTest() throws {
