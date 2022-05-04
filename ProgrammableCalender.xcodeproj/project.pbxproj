@@ -7,16 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F4E60352821739B000E7B95 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60342821739B000E7B95 /* TabModel.swift */; };
+		6F4E60362821739B000E7B95 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60342821739B000E7B95 /* TabModel.swift */; };
+		6F4E6038282174B8000E7B95 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E6037282174B8000E7B95 /* SideMenu.swift */; };
+		6F4E6039282174B8000E7B95 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E6037282174B8000E7B95 /* SideMenu.swift */; };
+		6F4E603B2821753D000E7B95 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E603A2821753D000E7B95 /* MainView.swift */; };
+		6F4E603C2821753D000E7B95 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E603A2821753D000E7B95 /* MainView.swift */; };
+		6F4E603E28217999000E7B95 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E603D28217999000E7B95 /* QueryView.swift */; };
+		6F4E603F28217999000E7B95 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E603D28217999000E7B95 /* QueryView.swift */; };
+		6F4E6041282179A3000E7B95 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E6040282179A3000E7B95 /* CalendarView.swift */; };
+		6F4E6042282179A3000E7B95 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E6040282179A3000E7B95 /* CalendarView.swift */; };
+		6F4E60442821974D000E7B95 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60432821974D000E7B95 /* Database.swift */; };
+		6F4E60452821974D000E7B95 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60432821974D000E7B95 /* Database.swift */; };
+		6F4E605228219EE3000E7B95 /* SQLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605128219EE3000E7B95 /* SQLs.swift */; };
+		6F4E605328219EE3000E7B95 /* SQLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605128219EE3000E7B95 /* SQLs.swift */; };
+		6F4E60562821CA74000E7B95 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4E60552821CA74000E7B95 /* SQLite */; };
+		6F4E60582821CA7F000E7B95 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4E60572821CA7F000E7B95 /* SQLite */; };
+		6F4E605A2821CC43000E7B95 /* UIImage+Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60592821CC43000E7B95 /* UIImage+Blob.swift */; };
+		6F4E605B2821CC43000E7B95 /* UIImage+Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60592821CC43000E7B95 /* UIImage+Blob.swift */; };
+		6F4E605D2821EEEC000E7B95 /* CSQLite+Low.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605C2821EEEC000E7B95 /* CSQLite+Low.swift */; };
+		6F4E605E2821EEEC000E7B95 /* CSQLite+Low.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605C2821EEEC000E7B95 /* CSQLite+Low.swift */; };
+		6F4E60602823051A000E7B95 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605F2823051A000E7B95 /* SettingsView.swift */; };
+		6F4E60612823051A000E7B95 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605F2823051A000E7B95 /* SettingsView.swift */; };
 		6FD8E803282156F700196597 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E802282156F700196597 /* Tests_iOS.swift */; };
 		6FD8E805282156F700196597 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E804282156F700196597 /* Tests_iOSLaunchTests.swift */; };
 		6FD8E80F282156F700196597 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E80E282156F700196597 /* Tests_macOS.swift */; };
 		6FD8E811282156F700196597 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E810282156F700196597 /* Tests_macOSLaunchTests.swift */; };
 		6FD8E812282156F700196597 /* ProgrammableCalenderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E7EA282156F500196597 /* ProgrammableCalenderApp.swift */; };
 		6FD8E813282156F700196597 /* ProgrammableCalenderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E7EA282156F500196597 /* ProgrammableCalenderApp.swift */; };
-		6FD8E814282156F700196597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E7EB282156F500196597 /* ContentView.swift */; };
-		6FD8E815282156F700196597 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E7EB282156F500196597 /* ContentView.swift */; };
 		6FD8E816282156F700196597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FD8E7EC282156F700196597 /* Assets.xcassets */; };
 		6FD8E817282156F700196597 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FD8E7EC282156F700196597 /* Assets.xcassets */; };
+		6FD8E8272821586700196597 /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E8262821586700196597 /* TabMenu.swift */; };
+		6FD8E8282821586700196597 /* TabMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E8262821586700196597 /* TabMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +59,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F4E60342821739B000E7B95 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
+		6F4E6037282174B8000E7B95 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		6F4E603A2821753D000E7B95 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		6F4E603D28217999000E7B95 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
+		6F4E6040282179A3000E7B95 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		6F4E60432821974D000E7B95 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		6F4E605128219EE3000E7B95 /* SQLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLs.swift; sourceTree = "<group>"; };
+		6F4E60592821CC43000E7B95 /* UIImage+Blob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Blob.swift"; sourceTree = "<group>"; };
+		6F4E605C2821EEEC000E7B95 /* CSQLite+Low.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CSQLite+Low.swift"; sourceTree = "<group>"; };
+		6F4E605F2823051A000E7B95 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		6FD8E7EA282156F500196597 /* ProgrammableCalenderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammableCalenderApp.swift; sourceTree = "<group>"; };
-		6FD8E7EB282156F500196597 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6FD8E7EC282156F700196597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FD8E7F1282156F700196597 /* ProgrammableCalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgrammableCalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD8E7F7282156F700196597 /* ProgrammableCalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgrammableCalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +80,7 @@
 		6FD8E80A282156F700196597 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD8E80E282156F700196597 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		6FD8E810282156F700196597 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		6FD8E8262821586700196597 /* TabMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4E60562821CA74000E7B95 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4E60582821CA7F000E7B95 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +117,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F4E6049282198A6000E7B95 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F4E604C282198EC000E7B95 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6F4E60432821974D000E7B95 /* Database.swift */,
+				6F4E605128219EE3000E7B95 /* SQLs.swift */,
+				6F4E60592821CC43000E7B95 /* UIImage+Blob.swift */,
+				6F4E605C2821EEEC000E7B95 /* CSQLite+Low.swift */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		6F4E604D282199BD000E7B95 /* UsecaseLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6F4E60342821739B000E7B95 /* TabModel.swift */,
+			);
+			path = UsecaseLayer;
+			sourceTree = "<group>";
+		};
+		6F4E604E282199C6000E7B95 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				6F4E605028219A24000E7B95 /* Component */,
+				6F4E604F28219A0E000E7B95 /* Top */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		6F4E604F28219A0E000E7B95 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				6FD8E8262821586700196597 /* TabMenu.swift */,
+				6F4E6037282174B8000E7B95 /* SideMenu.swift */,
+				6F4E603A2821753D000E7B95 /* MainView.swift */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		6F4E605028219A24000E7B95 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				6F4E603D28217999000E7B95 /* QueryView.swift */,
+				6F4E6040282179A3000E7B95 /* CalendarView.swift */,
+				6F4E605F2823051A000E7B95 /* SettingsView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		6FD8E7E4282156F500196597 = {
 			isa = PBXGroup;
 			children = (
@@ -91,14 +180,17 @@
 				6FD8E801282156F700196597 /* Tests iOS */,
 				6FD8E80D282156F700196597 /* Tests macOS */,
 				6FD8E7F2282156F700196597 /* Products */,
+				6F4E6049282198A6000E7B95 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		6FD8E7E9282156F500196597 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				6F4E604E282199C6000E7B95 /* UILayer */,
+				6F4E604D282199BD000E7B95 /* UsecaseLayer */,
+				6F4E604C282198EC000E7B95 /* DataLayer */,
 				6FD8E7EA282156F500196597 /* ProgrammableCalenderApp.swift */,
-				6FD8E7EB282156F500196597 /* ContentView.swift */,
 				6FD8E7EC282156F700196597 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -157,6 +249,9 @@
 			dependencies = (
 			);
 			name = "ProgrammableCalender (iOS)";
+			packageProductDependencies = (
+				6F4E60552821CA74000E7B95 /* SQLite */,
+			);
 			productName = "ProgrammableCalender (iOS)";
 			productReference = 6FD8E7F1282156F700196597 /* ProgrammableCalender.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +269,9 @@
 			dependencies = (
 			);
 			name = "ProgrammableCalender (macOS)";
+			packageProductDependencies = (
+				6F4E60572821CA7F000E7B95 /* SQLite */,
+			);
 			productName = "ProgrammableCalender (macOS)";
 			productReference = 6FD8E7F7282156F700196597 /* ProgrammableCalender.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +347,9 @@
 				Base,
 			);
 			mainGroup = 6FD8E7E4282156F500196597;
+			packageReferences = (
+				6F4E60542821CA74000E7B95 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = 6FD8E7F2282156F700196597 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,7 +400,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD8E814282156F700196597 /* ContentView.swift in Sources */,
+				6F4E605A2821CC43000E7B95 /* UIImage+Blob.swift in Sources */,
+				6FD8E8272821586700196597 /* TabMenu.swift in Sources */,
+				6F4E6041282179A3000E7B95 /* CalendarView.swift in Sources */,
+				6F4E603E28217999000E7B95 /* QueryView.swift in Sources */,
+				6F4E603B2821753D000E7B95 /* MainView.swift in Sources */,
+				6F4E605228219EE3000E7B95 /* SQLs.swift in Sources */,
+				6F4E60352821739B000E7B95 /* TabModel.swift in Sources */,
+				6F4E605D2821EEEC000E7B95 /* CSQLite+Low.swift in Sources */,
+				6F4E6038282174B8000E7B95 /* SideMenu.swift in Sources */,
+				6F4E60602823051A000E7B95 /* SettingsView.swift in Sources */,
+				6F4E60442821974D000E7B95 /* Database.swift in Sources */,
 				6FD8E812282156F700196597 /* ProgrammableCalenderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +419,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD8E815282156F700196597 /* ContentView.swift in Sources */,
+				6F4E605B2821CC43000E7B95 /* UIImage+Blob.swift in Sources */,
+				6FD8E8282821586700196597 /* TabMenu.swift in Sources */,
+				6F4E6042282179A3000E7B95 /* CalendarView.swift in Sources */,
+				6F4E603F28217999000E7B95 /* QueryView.swift in Sources */,
+				6F4E603C2821753D000E7B95 /* MainView.swift in Sources */,
+				6F4E605328219EE3000E7B95 /* SQLs.swift in Sources */,
+				6F4E60362821739B000E7B95 /* TabModel.swift in Sources */,
+				6F4E605E2821EEEC000E7B95 /* CSQLite+Low.swift in Sources */,
+				6F4E6039282174B8000E7B95 /* SideMenu.swift in Sources */,
+				6F4E60612823051A000E7B95 /* SettingsView.swift in Sources */,
+				6F4E60452821974D000E7B95 /* Database.swift in Sources */,
 				6FD8E813282156F700196597 /* ProgrammableCalenderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,7 +592,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,7 +622,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,12 +651,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.arasan01.ProgrammableCalender;
 				PRODUCT_NAME = ProgrammableCalender;
@@ -558,12 +680,13 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.arasan01.ProgrammableCalender;
 				PRODUCT_NAME = ProgrammableCalender;
@@ -701,6 +824,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6F4E60542821CA74000E7B95 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.13.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6F4E60552821CA74000E7B95 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F4E60542821CA74000E7B95 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+		6F4E60572821CA7F000E7B95 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F4E60542821CA74000E7B95 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6FD8E7E5282156F500196597 /* Project object */;
 }

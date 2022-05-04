@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct ProgrammableCalenderApp: App {
+    let dbModel = try! Database()
+    
+    init() {
+        try! dbModel.defineScheme()
+        (0..<5).forEach { _ in try! dbModel.insertTest() }
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(dbModel)
         }
     }
 }
