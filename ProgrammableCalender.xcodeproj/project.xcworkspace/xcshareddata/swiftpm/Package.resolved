@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "resolver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Resolver",
+      "state" : {
+        "revision" : "97de0b0320036607564af4a60025b48f8d041221",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "sourceful",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/Sourceful.git",
+      "state" : {
+        "revision" : "77317c0043dc0330e2baf02c43d415bc7cc8a784",
+        "version" : "0.4.0"
+      }
+    },
+    {
       "identity" : "sqlite.swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stephencelis/SQLite.swift",

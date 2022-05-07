@@ -6,20 +6,23 @@
 //
 
 import SwiftUI
+import Resolver
 
 @main
 struct ProgrammableCalenderApp: App {
-    let dbModel = try! Database()
+    
+    @Injected var database: DatabaseProtocol
     
     init() {
-        try! dbModel.defineScheme()
-        (0..<5).forEach { _ in try! dbModel.insertTest() }
+        try! database.defineScheme()
+        #if DEBUG
+        database.debugSection()
+        #endif
     }
     
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(dbModel)
         }
     }
 }

@@ -11,6 +11,10 @@ enum SQL {
     enum Table {
         static let calendar = SQLite.Table("calendar")
         static let image = SQLite.Table("image")
+        static let sqliteMaster = SQLite.Table("sqlite_master")
+        static func anyTable(_ literal: String) -> SQLite.Table {
+            return SQLite.Table(literal)
+        }
     }
     
     enum Expression {
@@ -19,6 +23,12 @@ enum SQL {
         static let body = SQLite.Expression<String>("body")
         static let memoryAt = SQLite.Expression<Date>("memory_at")
         static let imageData = SQLite.Expression<Blob>("imageData")
+        static let type = SQLite.Expression<String>("type")
+        static let tableName = SQLite.Expression<String>("tbl_name")
+        static let sql = SQLite.Expression<String>("sql")
+        static func anyKey<T: SQLite.ExpressionType>(_ literal: String) -> SQLite.Expression<T> {
+            return SQLite.Expression<T>(literal)
+        }
     }
     
     enum Create {
@@ -36,8 +46,8 @@ enum SQL {
                 t.column(
                     SQL.Expression.calendarId,
                     references: SQL.Table.calendar, SQL.Expression.calendarId)
-                t.column(
-                    SQL.Expression.imageData)
+                t.column(SQL.Expression.type)
+                t.column(SQL.Expression.imageData)
             }
         }()
     }

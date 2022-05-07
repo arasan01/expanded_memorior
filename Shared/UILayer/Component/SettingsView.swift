@@ -6,15 +6,28 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct SettingsView: View {
+    @Injected var db: DatabaseProtocol
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Section {
+                Button {
+                    try! db.insertTest()
+                } label: {
+                    Text("Insert Test")
+                }
+
+            }
+        }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        Resolver.registerMockServices()
+        return SettingsView()
     }
 }

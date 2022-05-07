@@ -1,9 +1,11 @@
 import SwiftUI
+import Resolver
 
 struct TabMainView: View {
+    
     var body: some View {
         TabView {
-            ForEach(TabModel.views, id: \.title) { model in
+            ForEach(Resolver.resolve([TabModel].self), id: \.title) { model in
                 model.destination
                     .tabItem {
                         Image(systemName: model.image)
@@ -17,6 +19,7 @@ struct TabMainView: View {
 
 struct TabMainView_Previews: PreviewProvider {
     static var previews: some View {
-        TabMainView()
+        Resolver.registerMockServices()
+        return TabMainView()
     }
 }

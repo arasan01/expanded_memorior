@@ -29,6 +29,18 @@
 		6F4E605E2821EEEC000E7B95 /* CSQLite+Low.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605C2821EEEC000E7B95 /* CSQLite+Low.swift */; };
 		6F4E60602823051A000E7B95 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605F2823051A000E7B95 /* SettingsView.swift */; };
 		6F4E60612823051A000E7B95 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E605F2823051A000E7B95 /* SettingsView.swift */; };
+		6F4E606428231FDB000E7B95 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4E606328231FDB000E7B95 /* Sourceful */; };
+		6F4E606628231FE4000E7B95 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4E606528231FE4000E7B95 /* Sourceful */; };
+		6F4E60682823214C000E7B95 /* Sourceful+Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60672823214C000E7B95 /* Sourceful+Lexer.swift */; };
+		6F4E60692823214C000E7B95 /* Sourceful+Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60672823214C000E7B95 /* Sourceful+Lexer.swift */; };
+		6F4E606B2823292D000E7B95 /* Sourceful+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E606A2823292D000E7B95 /* Sourceful+Theme.swift */; };
+		6F4E606C2823292D000E7B95 /* Sourceful+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E606A2823292D000E7B95 /* Sourceful+Theme.swift */; };
+		6F4E60732825DB0C000E7B95 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4E60722825DB0C000E7B95 /* Resolver */; };
+		6F4E60752825DB13000E7B95 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 6F4E60742825DB13000E7B95 /* Resolver */; };
+		6F4E60772825DC07000E7B95 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60762825DC07000E7B95 /* Resolver.swift */; };
+		6F4E60782825DC07000E7B95 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60762825DC07000E7B95 /* Resolver.swift */; };
+		6F4E607A2825F43B000E7B95 /* QueryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60792825F43B000E7B95 /* QueryViewModel.swift */; };
+		6F4E607B2825F43B000E7B95 /* QueryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E60792825F43B000E7B95 /* QueryViewModel.swift */; };
 		6FD8E803282156F700196597 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E802282156F700196597 /* Tests_iOS.swift */; };
 		6FD8E805282156F700196597 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E804282156F700196597 /* Tests_iOSLaunchTests.swift */; };
 		6FD8E80F282156F700196597 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD8E80E282156F700196597 /* Tests_macOS.swift */; };
@@ -69,6 +81,10 @@
 		6F4E60592821CC43000E7B95 /* UIImage+Blob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Blob.swift"; sourceTree = "<group>"; };
 		6F4E605C2821EEEC000E7B95 /* CSQLite+Low.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CSQLite+Low.swift"; sourceTree = "<group>"; };
 		6F4E605F2823051A000E7B95 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6F4E60672823214C000E7B95 /* Sourceful+Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sourceful+Lexer.swift"; sourceTree = "<group>"; };
+		6F4E606A2823292D000E7B95 /* Sourceful+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sourceful+Theme.swift"; sourceTree = "<group>"; };
+		6F4E60762825DC07000E7B95 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		6F4E60792825F43B000E7B95 /* QueryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewModel.swift; sourceTree = "<group>"; };
 		6FD8E7EA282156F500196597 /* ProgrammableCalenderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammableCalenderApp.swift; sourceTree = "<group>"; };
 		6FD8E7EC282156F700196597 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FD8E7F1282156F700196597 /* ProgrammableCalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgrammableCalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4E60732825DB0C000E7B95 /* Resolver in Frameworks */,
 				6F4E60562821CA74000E7B95 /* SQLite in Frameworks */,
+				6F4E606428231FDB000E7B95 /* Sourceful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +114,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4E60752825DB13000E7B95 /* Resolver in Frameworks */,
 				6F4E60582821CA7F000E7B95 /* SQLite in Frameworks */,
+				6F4E606628231FE4000E7B95 /* Sourceful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,10 +186,20 @@
 			isa = PBXGroup;
 			children = (
 				6F4E603D28217999000E7B95 /* QueryView.swift */,
+				6F4E60792825F43B000E7B95 /* QueryViewModel.swift */,
 				6F4E6040282179A3000E7B95 /* CalendarView.swift */,
 				6F4E605F2823051A000E7B95 /* SettingsView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		6F4E606D28258BEC000E7B95 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6F4E606A2823292D000E7B95 /* Sourceful+Theme.swift */,
+				6F4E60672823214C000E7B95 /* Sourceful+Lexer.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		6FD8E7E4282156F500196597 = {
@@ -187,11 +217,13 @@
 		6FD8E7E9282156F500196597 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				6FD8E7EA282156F500196597 /* ProgrammableCalenderApp.swift */,
+				6F4E606D28258BEC000E7B95 /* Extension */,
 				6F4E604E282199C6000E7B95 /* UILayer */,
 				6F4E604D282199BD000E7B95 /* UsecaseLayer */,
 				6F4E604C282198EC000E7B95 /* DataLayer */,
-				6FD8E7EA282156F500196597 /* ProgrammableCalenderApp.swift */,
 				6FD8E7EC282156F700196597 /* Assets.xcassets */,
+				6F4E60762825DC07000E7B95 /* Resolver.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -251,6 +283,8 @@
 			name = "ProgrammableCalender (iOS)";
 			packageProductDependencies = (
 				6F4E60552821CA74000E7B95 /* SQLite */,
+				6F4E606328231FDB000E7B95 /* Sourceful */,
+				6F4E60722825DB0C000E7B95 /* Resolver */,
 			);
 			productName = "ProgrammableCalender (iOS)";
 			productReference = 6FD8E7F1282156F700196597 /* ProgrammableCalender.app */;
@@ -271,6 +305,8 @@
 			name = "ProgrammableCalender (macOS)";
 			packageProductDependencies = (
 				6F4E60572821CA7F000E7B95 /* SQLite */,
+				6F4E606528231FE4000E7B95 /* Sourceful */,
+				6F4E60742825DB13000E7B95 /* Resolver */,
 			);
 			productName = "ProgrammableCalender (macOS)";
 			productReference = 6FD8E7F7282156F700196597 /* ProgrammableCalender.app */;
@@ -349,6 +385,8 @@
 			mainGroup = 6FD8E7E4282156F500196597;
 			packageReferences = (
 				6F4E60542821CA74000E7B95 /* XCRemoteSwiftPackageReference "SQLite" */,
+				6F4E606228231FDB000E7B95 /* XCRemoteSwiftPackageReference "Sourceful" */,
+				6F4E60712825DB0C000E7B95 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = 6FD8E7F2282156F700196597 /* Products */;
 			projectDirPath = "";
@@ -400,15 +438,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4E606B2823292D000E7B95 /* Sourceful+Theme.swift in Sources */,
+				6F4E607A2825F43B000E7B95 /* QueryViewModel.swift in Sources */,
 				6F4E605A2821CC43000E7B95 /* UIImage+Blob.swift in Sources */,
 				6FD8E8272821586700196597 /* TabMenu.swift in Sources */,
 				6F4E6041282179A3000E7B95 /* CalendarView.swift in Sources */,
 				6F4E603E28217999000E7B95 /* QueryView.swift in Sources */,
+				6F4E60682823214C000E7B95 /* Sourceful+Lexer.swift in Sources */,
 				6F4E603B2821753D000E7B95 /* MainView.swift in Sources */,
 				6F4E605228219EE3000E7B95 /* SQLs.swift in Sources */,
 				6F4E60352821739B000E7B95 /* TabModel.swift in Sources */,
 				6F4E605D2821EEEC000E7B95 /* CSQLite+Low.swift in Sources */,
 				6F4E6038282174B8000E7B95 /* SideMenu.swift in Sources */,
+				6F4E60772825DC07000E7B95 /* Resolver.swift in Sources */,
 				6F4E60602823051A000E7B95 /* SettingsView.swift in Sources */,
 				6F4E60442821974D000E7B95 /* Database.swift in Sources */,
 				6FD8E812282156F700196597 /* ProgrammableCalenderApp.swift in Sources */,
@@ -419,15 +461,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F4E606C2823292D000E7B95 /* Sourceful+Theme.swift in Sources */,
+				6F4E607B2825F43B000E7B95 /* QueryViewModel.swift in Sources */,
 				6F4E605B2821CC43000E7B95 /* UIImage+Blob.swift in Sources */,
 				6FD8E8282821586700196597 /* TabMenu.swift in Sources */,
 				6F4E6042282179A3000E7B95 /* CalendarView.swift in Sources */,
 				6F4E603F28217999000E7B95 /* QueryView.swift in Sources */,
+				6F4E60692823214C000E7B95 /* Sourceful+Lexer.swift in Sources */,
 				6F4E603C2821753D000E7B95 /* MainView.swift in Sources */,
 				6F4E605328219EE3000E7B95 /* SQLs.swift in Sources */,
 				6F4E60362821739B000E7B95 /* TabModel.swift in Sources */,
 				6F4E605E2821EEEC000E7B95 /* CSQLite+Low.swift in Sources */,
 				6F4E6039282174B8000E7B95 /* SideMenu.swift in Sources */,
+				6F4E60782825DC07000E7B95 /* Resolver.swift in Sources */,
 				6F4E60612823051A000E7B95 /* SettingsView.swift in Sources */,
 				6F4E60452821974D000E7B95 /* Database.swift in Sources */,
 				6FD8E813282156F700196597 /* ProgrammableCalenderApp.swift in Sources */,
@@ -834,6 +880,22 @@
 				minimumVersion = 0.13.3;
 			};
 		};
+		6F4E606228231FDB000E7B95 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Sourceful.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+		6F4E60712825DB0C000E7B95 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -846,6 +908,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6F4E60542821CA74000E7B95 /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
+		};
+		6F4E606328231FDB000E7B95 /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F4E606228231FDB000E7B95 /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
+		};
+		6F4E606528231FE4000E7B95 /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F4E606228231FDB000E7B95 /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
+		};
+		6F4E60722825DB0C000E7B95 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F4E60712825DB0C000E7B95 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+		6F4E60742825DB13000E7B95 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F4E60712825DB0C000E7B95 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

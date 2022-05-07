@@ -12,11 +12,10 @@ struct TabModel {
     }
     
     static var views: [TabModel] {
-        let models = [
-            TabModel(title: "Calender", image: "calendar.circle.fill", destination: CalendarView()),
-            TabModel(title: "Query", image: "greaterthan.circle.fill", destination: QueryView()),
-            TabModel(title: "Setting", image: "exclamationmark.circle.fill", destination: SettingsView())
+        [
+            TabModel(title: "Calender", image: "calendar.circle", destination: CalendarView()),
+            TabModel(title: "Query", image: "greaterthan.circle", destination: QueryView(model: .init())),
+            TabModel(title: "Setting", image: "gear.circle", destination: SettingsView())
         ]
-        return models
     }
 }

@@ -1,7 +1,20 @@
 import Foundation
 import SQLite
 
-public final class Database: ObservableObject {
+protocol DatabaseProtocol {
+    init(fileManager: FileManager) throws
+    
+    func defineScheme() throws
+    func rawQueryPublish(query: String, handler: @escaping (String) -> Void) throws
+    func fetchTables(handler: @escaping ([String]) -> Void) throws
+    func insertTest() throws
+    
+    #if DEBUG
+    func debugSection()
+    #endif
+}
+
+public final class Database: ObservableObject, DatabaseProtocol {
     private let fileManager: FileManager
     private let db: Connection
     
@@ -26,8 +39,29 @@ public final class Database: ObservableObject {
     public func rawQueryPublish(
         query: String,
         handler: @escaping (String) -> Void
-    ) {
-        db.anyExecute(query, handler: { handler($0.asView()) })
+    ) throws {
+        try db.transaction {
+            self.db.anyExecute(query) { handler($0.asView()) }
+        }
+    }
+    
+    public func fetchTables(
+        handler: @escaping ([String]) -> Void
+    ) throws {
+        let tables = Array(try db.prepare(SQL.Table.sqliteMaster))
+            .map { $0[SQL.Expression.tableName] }
+        handler(tables)
+    }
+    
+    public func fetchAll(
+        table: String,
+        handler: @escaping ( [[String:String?]] ) -> Void
+    ) throws {
+        for row in try db.prepare(SQL.Table.anyTable(table).limit(10)) {
+            let v: [String: String?] = try row.decode()
+            print(v)
+        }
+//        handler(decoded)
     }
     
     public func insertTest() throws {
@@ -40,3 +74,24 @@ public final class Database: ObservableObject {
         try db.run(sql)
     }
 }
+
+#if DEBUG
+extension Database {
+    func debugSection() {
+//        (0..<5).forEach { _ in try! self.insertTest() }
+//        try! fetchTables { print($0) }
+        try! fetchAll(table: "calendar") { data in
+            dump(data)
+        }
+    }
+}
+
+final class MockDatabase: DatabaseProtocol {
+    init(fileManager: FileManager = .default) throws {}
+    func defineScheme() throws {}
+    func rawQueryPublish(query: String, handler: @escaping (String) -> Void) throws {}
+    func fetchTables(handler: @escaping ([String]) -> Void) throws {}
+    func insertTest() throws {}
+    func debugSection() {}
+}
+#endif

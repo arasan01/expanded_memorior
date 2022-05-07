@@ -1,90 +1,151 @@
-//
-//  QueryView.swift
-//  ProgrammableCalender
-//
-//  Created by 新山響生 on 2022/05/03.
-//
-
 import SwiftUI
-
-let formatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .none
-    formatter.timeStyle = .medium
-    return formatter
-}()
+import Sourceful
+import Resolver
 
 struct QueryView: View {
     enum Field: Hashable { case query }
-    @EnvironmentObject var db: Database
-    @State var query: String = "SELECT * FROM calendar"
-    @State var result: String = "No Output"
-    @State var lastExecute: Date? = nil
+    
+    @StateObject var model: QueryViewModel
     @FocusState private var focused: Field?
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 25) {
-            VStack {
-                HStack {
-                    Text("Query")
-                    Spacer()
-                    Button {
-                        db.rawQueryPublish(query: query) { output in
-                            result = output
-                            lastExecute = .now
-                        }
-                    } label: {
-                        Text("Execute")
-                    }.buttonStyle(.bordered)
-                }
-                TextEditor(text: $query)
-                    .background(.clear)
-                    .multilineTextAlignment(.leading)
-                    .padding(.top, 4)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.primary, lineWidth: 2))
-                    .frame(minHeight: 100, idealHeight: 300)
-                    .focused($focused, equals: .query)
-                    .onTapGesture { focused = .query }
-            }
-            VStack {
-                HStack {
-                    Text("Output")
-                    Button {
-                        #if os(macOS)
-                        NSPasteboard.general.setString(result, forType: .string)
-                        #elseif os(iOS)
-                        UIPasteboard.general.string = result
-                        #endif
-                    } label: {
-                        Text("Copy")
-                    }
-                    .buttonStyle(.bordered)
-
-                    Spacer()
-                    if let lastExecute = lastExecute {
-                        Text(formatter.string(from: lastExecute))
-                    }
-                }
-                ScrollView {
-                    Text(result)
-                        .textSelection(.enabled)
-                        .lineLimit(nil)
-                        .padding(3)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(Color.primary, lineWidth: 2))
-            }
+            CodeView(model: model, focused: _focused)
+            OutputView(model: model, focused: _focused)
+            Spacer()
         }
+        .frame(alignment: .top)
         .padding()
         .onTapGesture { focused = nil }
+        .animation(.easeIn(duration: 0.25), value: model.isQueryOpen)
+        .animation(.easeIn(duration: 0.25), value: model.isOutputOpen)
+    }
+}
+
+private struct OpenableModifier: ViewModifier {
+    let key: KeyEquivalent
+    func body(content: Content) -> some View {
+        content
+            .buttonStyle(.borderless)
+            .foregroundColor(.primary)
+            .keyboardShortcut(key, modifiers: .control)
+            .help("Open and Close the section (⌃ \(String(key.character)))")
+    }
+}
+
+private struct ExecutableModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .buttonStyle(.borderedProminent)
+            .keyboardShortcut(.return, modifiers: [.command])
+            .help("Execute the query (⌘ ↵)")
+    }
+}
+
+private struct CopiableModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .buttonStyle(.bordered)
+            .keyboardShortcut("c", modifiers: [.command, .shift])
+            .help("Copy the output logged (⇧ ⌘ C)")
+    }
+}
+
+private struct OutputBorder: ViewModifier {
+    func body(content: Content) -> some View {
+        #if os(macOS)
+        return content
+        #elseif os(iOS)
+        return content
+            .padding(3)
+            .overlay(
+                RoundedRectangle(cornerRadius: 4)
+                    .stroke(Color.primary, lineWidth: 2))
+        #endif
+    }
+}
+
+private struct CodeView: View {
+    @ObservedObject var model: QueryViewModel
+    @FocusState var focused: QueryView.Field?
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Button {
+                    model.isQueryOpen.toggle()
+                } label: {
+                    HStack(spacing: 5) {
+                        Image(systemName: model.isQueryOpen
+                              ? "chevron.down" : "chevron.forward")
+                            .frame(width: 20, height: 20)
+                        Text("Query")
+                    }
+                    Spacer()
+                }
+                .modifier(OpenableModifier(key: "1"))
+                Button {
+                    model.execute()
+                } label: {
+                    Text("Execute")
+                }
+                .modifier(ExecutableModifier())
+            }
+            if model.isQueryOpen {
+                SourceCodeTextEditor(
+                    text: $model.query,
+                    customization: model.sourceCustomize(),
+                    shouldBecomeFirstResponder: false
+                )
+                .frame(minHeight: 100)
+                .focused($focused, equals: .query)
+                .onTapGesture { focused = .query }
+            }
+        }
+    }
+}
+
+private struct OutputView: View {
+    @ObservedObject var model: QueryViewModel
+    @FocusState var focused: QueryView.Field?
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Button {
+                    model.isOutputOpen.toggle()
+                } label: {
+                    HStack(spacing: 5) {
+                        Image(systemName: model.isOutputOpen
+                              ? "chevron.down" : "chevron.forward")
+                            .frame(width: 20, height: 20)
+                        Text("Output")
+                    }
+                    if let lastExecute = model.lastExecute {
+                        Text(model.formatter.string(from: lastExecute))
+                    }
+                    Spacer()
+                }
+                .modifier(OpenableModifier(key: "2"))
+                Button {
+                    model.clipboardCopy()
+                } label: {
+                    Text("Copy")
+                }
+                .modifier(CopiableModifier())
+                
+            }
+            if model.isOutputOpen {
+                TextEditor(text: .constant(model.result))
+                    .modifier(OutputBorder())
+            }
+        }
     }
 }
 
 struct QueryView_Previews: PreviewProvider {
     static var previews: some View {
-        QueryView()
+        Resolver.registerMockServices()
+        return QueryView(model: .init())
     }
 }

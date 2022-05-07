@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct CalendarView: View {
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
@@ -15,6 +17,7 @@ struct CalendarView: View {
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView()
+        Resolver.registerMockServices()
+        return CalendarView()
     }
 }

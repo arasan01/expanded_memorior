@@ -1,10 +1,11 @@
 import SwiftUI
+import Resolver
 
 struct SidebarMainView: View {
     var body: some View {
         NavigationView {
             SidebarView()
-            QueryView()
+            Resolver.resolve([TabModel].self)[1].destination
         }
     }
 }
@@ -12,7 +13,7 @@ struct SidebarMainView: View {
 struct SidebarView: View {
     var body: some View {
         List {
-            ForEach(TabModel.views, id: \.title) { model in
+            ForEach(Resolver.resolve([TabModel].self), id: \.title) { model in
                 NavigationLink(destination: model.destination) {
                     Label(model.title, systemImage: model.image)
                 }
@@ -24,6 +25,7 @@ struct SidebarView: View {
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        SidebarView()
+        Resolver.registerMockServices()
+        return SidebarMainView()
     }
 }
