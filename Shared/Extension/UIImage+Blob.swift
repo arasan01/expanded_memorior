@@ -2,11 +2,10 @@ import SQLite
 
 #if canImport(UIKit)
 import UIKit
-public typealias XImage = UIImage
 #elseif canImport(AppKit)
 import AppKit
-public typealias XImage = NSImage
 #endif
+
 
 extension XImage: Value {
     public class var declaredDatatype: String {

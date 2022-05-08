@@ -29,7 +29,7 @@ public struct DefaultSourceCodeTheme: SourceCodeTheme {
             return Color(red: 116/255, green: 109/255, blue: 176/255, alpha: 1.0)
             
         case .string:
-            return Color(red: 211/255, green: 35/255, blue: 46/255, alpha: 1.0)
+            return Color(red: 247/255, green: 225/255, blue: 61/255, alpha: 1.0)
             
         case .identifier:
             return Color(red: 255/255, green: 128/255, blue: 128/255, alpha: 1.0)
@@ -38,7 +38,7 @@ public struct DefaultSourceCodeTheme: SourceCodeTheme {
             return Color(red: 54/255, green: 174/255, blue: 124/255, alpha: 1.0)
             
         case .comment:
-            return Color(red: 69.0/255.0, green: 187.0/255.0, blue: 62.0/255.0, alpha: 1.0)
+            return Color(red: 169.0/255.0, green: 169.0/255.0, blue: 169.0/255.0, alpha: 1.0)
             
         case .editorPlaceholder:
             return backgroundColor

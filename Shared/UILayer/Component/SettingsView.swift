@@ -15,7 +15,7 @@ struct SettingsView: View {
         Form {
             Section {
                 Button {
-                    try! db.insertTest()
+                    
                 } label: {
                     Text("Insert Test")
                 }

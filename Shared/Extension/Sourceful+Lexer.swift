@@ -28,6 +28,14 @@ public class SQLiteLexer: SourceCodeRegexLexer {
             keywordGenerator(buildInScalarFn.uppercased().components(separatedBy: " "),
                              tokenType: .identifier))
         
+        let buildType = "null integer real text blob"
+        
+        generators.append(
+            keywordGenerator(buildType.components(separatedBy: " "), tokenType: .string))
+        
+        generators.append(
+            keywordGenerator(buildType.uppercased().components(separatedBy: " "), tokenType: .string))
+        
         // Line comment
         generators.append(regexGenerator("--(.*)", tokenType: .comment))
         
