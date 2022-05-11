@@ -11,6 +11,7 @@ import Resolver
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
         register { try! Database() as DatabaseProtocol }.scope(.application)
+        register { QueryViewModel(code: .init(), output: .init()) }.scope(.cached)
         register([TabModel].self) { TabModel.views }
     }
 }

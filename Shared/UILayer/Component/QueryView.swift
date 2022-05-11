@@ -10,15 +10,15 @@ struct QueryView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 25) {
-            CodeView(model: model, focused: _focused)
-            OutputView(model: model, focused: _focused)
+            CodeView(model: model.code, focused: _focused)
+            OutputView(model: model.output, focused: _focused)
             Spacer()
         }
         .frame(alignment: .top)
         .padding()
         .onTapGesture { focused = nil }
-        .animation(.easeIn(duration: 0.25), value: model.isQueryOpen)
-        .animation(.easeIn(duration: 0.25), value: model.isOutputOpen)
+        .animation(.easeIn(duration: 0.25), value: model.code.isQueryOpen)
+        .animation(.easeIn(duration: 0.25), value: model.output.isOutputOpen)
     }
 }
 
@@ -66,11 +66,12 @@ private struct OutputBorder: ViewModifier {
 }
 
 private struct CodeView: View {
-    @ObservedObject var model: QueryViewModel
+    @ObservedObject var model: CodeViewModel
     @FocusState var focused: QueryView.Field?
     
     var body: some View {
-        VStack {
+        print("code redraw")
+        return VStack {
             HStack {
                 Button {
                     model.isQueryOpen.toggle()
@@ -106,11 +107,12 @@ private struct CodeView: View {
 }
 
 private struct OutputView: View {
-    @ObservedObject var model: QueryViewModel
+    @ObservedObject var model: QueryOutputViewModel
     @FocusState var focused: QueryView.Field?
     
     var body: some View {
-        VStack {
+        print("output redraw")
+        return VStack {
             HStack {
                 Button {
                     model.isOutputOpen.toggle()
@@ -146,6 +148,6 @@ private struct OutputView: View {
 struct QueryView_Previews: PreviewProvider {
     static var previews: some View {
         Resolver.registerMockServices()
-        return QueryView(model: .init())
+        return QueryView(model: Resolver.resolve())
     }
 }

@@ -5,7 +5,7 @@ protocol DatabaseProtocol {
     init(fileManager: FileManager, kvStore: UserDefaults) throws
     
     func defineScheme() throws
-    func rawQueryPublish(query: String, handler: @escaping (String) -> Void) throws
+    func rawQueryPublish(query: String, handler: @escaping (String) -> Void)
     func fetchTables(handler: @escaping ([String]) -> Void) throws
     
     #if DEBUG
@@ -46,15 +46,22 @@ public final class Database: ObservableObject, DatabaseProtocol {
         try db.run(SQL.Create.image)
         try db.run(SQL.CreateIndex.metaType)
         try db.run(SQL.CreateIndex.calendar)
+        try db.run(SQL.CreateIndex.image)
         kvStore.set(true, forKey: onesDefineKey)
     }
     
     public func rawQueryPublish(
         query: String,
         handler: @escaping (String) -> Void
-    ) throws {
-        try db.transaction {
-            self.db.anyExecute(query) { handler($0.asView()) }
+    ) {
+        DispatchQueue.global().async {
+            do {
+                try self.db.transaction {
+                    self.db.anyExecute(query) { handler($0.asView()) }
+                }
+            } catch {
+                handler("\(error)")
+            }
         }
     }
     
@@ -75,7 +82,7 @@ public final class Database: ObservableObject, DatabaseProtocol {
 #if DEBUG
 extension Database {
     func debugSection() {
-        let blob = BlobGen.demoBlob()
+//        let blob = BlobGen.demoBlob()
 //        (0..<1_000_000).forEach { _ in try! self.insertTest(blob) }
 //        try! fetchTables { print($0) }
 //        try! fetchAll(table: "calendar") { data in
@@ -102,7 +109,7 @@ extension Database {
 final class MockDatabase: DatabaseProtocol {
     init(fileManager: FileManager = .default, kvStore: UserDefaults = .standard) throws {}
     func defineScheme() throws {}
-    func rawQueryPublish(query: String, handler: @escaping (String) -> Void) throws {}
+    func rawQueryPublish(query: String, handler: @escaping (String) -> Void) {}
     func fetchTables(handler: @escaping ([String]) -> Void) throws {}
     func debugSection() {}
 }

@@ -11,31 +11,28 @@ import Sourceful
 import Resolver
 
 final class QueryViewModel: ObservableObject {
+    @ObservedObject var code: CodeViewModel
+    @ObservedObject var output: QueryOutputViewModel
+    
+    init(code: CodeViewModel, output: QueryOutputViewModel) {
+        self.code = code
+        self.output = output
+        self.code.setup(
+            result: self.$output.result,
+            lastExecute: self.$output.lastExecute)
+    }
+}
+
+final class CodeViewModel: ObservableObject {
     @Injected var db: any DatabaseProtocol
-    
     @Published var query: String = "SELECT * FROM calendar"
-    @Published var result: String = "No Output"
-    @Published var lastExecute: Date? = nil
     @Published var isQueryOpen = true
-    @Published var isOutputOpen = true
+    var result: Binding<String>!
+    var lastExecute: Binding<Date?>!
     
-    let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .medium
-        return formatter
-    }()
-    
-    func execute() {
-        do {
-            try self.db.rawQueryPublish(query: self.query) { output in
-                self.result = output
-                self.lastExecute = .now
-            }
-        } catch {
-            self.result = error.localizedDescription
-            self.lastExecute = .now
-        }
+    func setup(result: Binding<String>, lastExecute: Binding<Date?>) {
+        self.result = result
+        self.lastExecute = lastExecute
     }
     
     func sourceCustomize() -> SourceCodeTextEditor.Customization {
@@ -47,12 +44,36 @@ final class QueryViewModel: ObservableObject {
             theme: { DefaultSourceCodeTheme() })
     }
     
+    func execute() {
+        self.result.wrappedValue = "Query executing ..."
+        self.db.rawQueryPublish(query: self.query) { output in
+            DispatchQueue.main.async {
+                self.result.wrappedValue = output
+                self.lastExecute.wrappedValue = .now
+            }
+        }
+    }
+}
+
+final class QueryOutputViewModel: ObservableObject {
+    @Injected var db: any DatabaseProtocol
+    @Published var result: String = "No Output"
+    @Published var lastExecute: Date? = nil
+    @Published var isOutputOpen = true
+    
+    let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .medium
+        return formatter
+    }()
+    
     func clipboardCopy() {
-        #if os(macOS)
+#if os(macOS)
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(self.result, forType: .string)
-        #elseif os(iOS)
+#elseif os(iOS)
         UIPasteboard.general.string = self.result
-        #endif
+#endif
     }
 }

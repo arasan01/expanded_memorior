@@ -83,5 +83,9 @@ enum SQL {
         static let calendar: String = {
             return SQL.Table.calendar.createIndex(SQL.Expression.calendarId, ifNotExists: true)
         }()
+        
+        static let image: String = {
+            return SQL.Table.image.createIndex(SQL.Expression.calendarId, ifNotExists: true)
+        }()
     }
 }
